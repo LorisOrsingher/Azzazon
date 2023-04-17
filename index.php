@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -20,21 +24,33 @@ and open the template in the editor.
                         <li><a href="#"> categorie</li>
                     </ul>
                 </nav>
-                    <nav>
-                        <ul class="menu">
-                            <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone"><img src="Immagini/Carrello.png" alt="alt"/></a></li>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone"><img src="Immagini/Carrello.png" alt="alt"/></a></li>
+                        <?php
+                        if ($_SESSION["connesso"] == "yes") {
+                            ?>
+                        <li><a href="GestioneUtente/Utente.php" id="bottone2"><img src="Immagini/utente.png" alt="alt"/></a></li>
+
+                            <?php
+                        } else {
+                            ?>
                             <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone2"><img src="Immagini/utente.png" alt="alt"/></a></li>
-                        </ul>
-                    </nav>
+                            <?php
+                        }
+                        ?>
+
+                    </ul>
+                </nav>
 
             </header>
         </div>
 
 
 
-        <?php
-        // put your code here
-        ?>
+<?php
+// put your code here
+?>
     </body>
 </html>
 
@@ -93,7 +109,7 @@ and open the template in the editor.
         border: none;
         border-radius: 50px;
         cursor: pointer;
-        transition: all .3s ease; 
+        transition: all .3s ease;
     }
 
     button:hover{
