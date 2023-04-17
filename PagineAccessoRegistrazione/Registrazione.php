@@ -22,19 +22,29 @@ and open the template in the editor.
             $password = ucwords(strtolower(trim(($_POST['inputPassword']))));
             $sesso = ucwords(strtolower(trim(($_POST['Gender']))));
 
-            $query = "INSERT INTO utente (nome, cognome, mail, password, sesso) "
-                    . "VALUES('$nome', '$cognome', '$email', '$password', '$sesso')";
+            $ciccio = "SELECT * FROM utente WHERE mail='$email'";
+            $ciccio2 = mysqli_query($db_conn, $ciccio);
+            if (!mysqli_num_rows($ciccio2) > 0) {
+                $query = "INSERT INTO utente (nome, cognome, mail, password, sesso) "
+                        . "VALUES('$nome', '$cognome', '$email', '$password', '$sesso')";
 
-            $insert = mysqli_query($db_conn, $query);
+                $insert = mysqli_query($db_conn, $query);
 
-            if ($insert != null)
-                $message = "Contatto inserito con successo!";
-            else
-                $message = "Contatto già esistente";
+                if ($insert != null)
+                    $message = "Contatto inserito con successo!";
+                else
+                    $message = "Contatto già esistente";
 
-            echo $message;
+                echo $message;
 
-            header("refresh:3; index.php");
+                header("refresh:3; ../index.php");
+            } else {
+                ?>
+                <h3> EMAIL GIA REGISTRATA PREGO ACCEDA</h3>
+                
+                <?php
+                header("refresh:3; Registrazione.php");
+            }
         } else {
             ?>
             <body>
@@ -82,6 +92,8 @@ and open the template in the editor.
                         </div>
 
                         <button type="submit" name="btnInserisci"> invia</button>
+                        <br>
+                        <h5>sei già registrato? <a href="Accesso.php"> Accedi</a></h5>
                     </form>
                 </div>
                 <?php
@@ -89,7 +101,7 @@ and open the template in the editor.
         } else {
             echo $error_message;
 
-            header("refresh:3; index.php");
+            header("refresh:3; ../index.php");
         }
         ?>
     </body>
@@ -101,13 +113,12 @@ and open the template in the editor.
         margin:0;
     }
     body{
-        background-color: lightblue;
+        background-color: gray;
     }
 
     #form{
-        margin: 0 auto;
-        width: fit-content;
-        margin-top: 50px;
+        margin: 33px;
+
     }
     .input *{
         display: block;
@@ -234,16 +245,19 @@ and open the template in the editor.
     }
 
     button{
-        margin-left:45% ;
-        margin-top: 30%;
+        margin-left:40% ;
+        margin-top: 5%;
         height: 30px;
         width: 60px;
     }
 
     .Inserimento{
-        margin-left: 200px;
-        margin-right: 200px;
-        margin-top: 50px;
+        margin-left: 40%;
+        margin-right: 40%;
+        margin-top: 10%;
         border: 1px black solid;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
     }
 </style>

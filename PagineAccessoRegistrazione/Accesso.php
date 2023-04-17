@@ -28,21 +28,28 @@ and open the template in the editor.
                 </div>
                 <br>
                 <button type="submit" name="btnInserisci"> invia</button>
+                
+                <h5>non sei ancora registrato? <a href="Registrazione.php"> Registrati</a></h5>
             </form>
         </div>
     </body>
 </html>
 
 <style>
+    body{
+        background-color: grey;
+    }
     .cDiv{
         width: 300px;
-        height: 300px;
+        height: 400px;
         border: 1px solid black;
+        margin-left: 40%;
+        margin-top: 12%
     }
 
     .cForm{
-        padding: 3px;
-        text-align: center;
+        padding: 20px;
+        text-align: center;  
     }
 
     .divInterno{

@@ -10,22 +10,25 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <div class="barra">
+            <header>
+                <img src="Immagini/logo.PNG" alt="Logo" width="100" height= "50" class="logo">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#"> categorie</li>
+                        <li><a href="#"> categorie</li>
+                        <li><a href="#"> categorie</li>
+                    </ul>
+                </nav>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone"><img src="Immagini/Carrello.png" alt="alt"/></a></li>
+                            <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone2"><img src="Immagini/utente.png" alt="alt"/></a></li>
+                        </ul>
+                    </nav>
 
-        <header>
-            <img src="Immagini/logo.PNG" alt="Logo" width="70" height= "50" class="logo">
-            <nav>
-                <ul class="menu">
-                    <li><a href="#"> categorie</li>
-                    <li><a href="#"> categorie</li>
-                    <li><a href="#"> categorie</li>
-                </ul>
-            </nav>
-            <form action="PagineAccessoRegistrazione/Accesso.php">
-                <button type="submit">
-                    Registrati
-                </button>  
-            </form>
-        </header>
+            </header>
+        </div>
 
 
 
@@ -60,7 +63,7 @@ and open the template in the editor.
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 10%;
+        padding: 30px 2%;
     }
 
     .menu{
