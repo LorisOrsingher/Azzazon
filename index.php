@@ -29,8 +29,9 @@ and open the template in the editor.
                         <li><a href="PagineAccessoRegistrazione/Accesso.php" id="bottone"><img src="Immagini/Carrello.png" alt="alt"/></a></li>
                         <?php
                         if ($_SESSION["connesso"] == "yes") {
+                            $_SESSION["emailCorrente"]=$_SESSION["mailAccount"];
                             ?>
-                        <li><a href="GestioneUtente/Utente.php" id="bottone2"><img src="Immagini/utente.png" alt="alt"/></a></li>
+                            <li><a href="GestioneUtente/Utente.php" id="bottone2"><img src="Immagini/utente.png" alt="alt"/></a></li>
 
                             <?php
                         } else {
@@ -48,9 +49,9 @@ and open the template in the editor.
 
 
 
-<?php
+        <?php
 // put your code here
-?>
+        ?>
     </body>
 </html>
 
