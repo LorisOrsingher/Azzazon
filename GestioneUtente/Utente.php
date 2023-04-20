@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["eliminazione"]="no";
 ?>
 <html>
     <head>
@@ -25,7 +24,7 @@ $_SESSION["eliminazione"]="no";
             <p>disconnettiti dal tuo profilo </p>
         </div>
         <div class="divInferiori">
-            <a href="eCancellazione.php" class="bottone"></a>
+            <a href="Cancellazione.php" class="bottone"></a>
             <a b class="scrittaGrande">ELIMINA ACCOUNT</a>
             <p>elimina il tuo account dal database</p>
         </div>

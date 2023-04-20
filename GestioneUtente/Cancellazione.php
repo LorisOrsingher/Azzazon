@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["eliminazione"] = "no";
 function disconnetti() {
     
     ?>
@@ -12,4 +11,9 @@ function disconnetti() {
 }
 
 disconnetti();
-
+?>
+    <style>
+        body{
+            background-color: grey;
+        }
+    </style>

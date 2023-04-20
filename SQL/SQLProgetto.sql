@@ -30,7 +30,6 @@ CREATE TABLE utente (
     cognome                     VARCHAR(20)         NOT NULL,
     mail                        VARCHAR(50)         NOT NULL UNIQUE,
     password                    VARCHAR(100)        NOT NULL,
-    sesso                       VARCHAR(8)          NOT NULL,
     PRIMARY KEY(idUtente)
 );
 
